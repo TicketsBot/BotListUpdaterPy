@@ -1,0 +1,13 @@
+id=""
+
+[serverCounter]
+baseUrl=""
+cooldown=1
+
+[botlists]
+  [botlists.dbotsorg]
+  baseUrl="https://discordbots.org/api"
+  apiKey=""
+  [botlists.dblcom]
+  baseUrl="https://discordbotlist.com/api"
+  token=""
