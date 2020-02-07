@@ -11,3 +11,6 @@ cooldown=1
   [botlists.dblcom]
   baseUrl="https://discordbotlist.com/api"
   token=""
+  [botlists.discordboats]
+  baseUrl="https://discord.boats/api"
+  apiKey=""

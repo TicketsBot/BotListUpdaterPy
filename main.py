@@ -15,6 +15,7 @@ async def main():
 
         await updateDbots(config, count)
         await updateDblCom(config, count)
+        await updateDiscordBoats(config, count)
 
 async def updateDbots(config, count):
     url = '{}/bots/{}/stats'.format(config['botlists']['dbotsorg']['baseUrl'], config['id'])
@@ -26,6 +27,12 @@ async def updateDblCom(config, count):
     url = '{}/bots/{}/stats'.format(config['botlists']['dblcom']['baseUrl'], config['id'])
     data = {'guilds': count}
     headers = {'Authorization': 'Bot {}'.format(config['botlists']['dblcom']['token'])}
+    requests.post(url, data=data, headers=headers)
+
+async def updateDiscordBoats(config, count):
+    url = '{}/bot/{}'.format(config['botlists']['discordboats']['baseUrl'], config['id'])
+    data = {'server_count': count}
+    headers = {'Authorization': config['botlists']['discordboats']['apiKey']}
     requests.post(url, data=data, headers=headers)
 
 asyncio.run(main())
